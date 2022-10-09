@@ -53,9 +53,10 @@ const leaveHoverStar = () => {
 
 const chooseRating = (star: number) => {
    isFocus.value = true
-   activeStar.value = star
    if(props.readonly) {
       activeStar = readonly<any>(star)
+   } else {
+      activeStar.value = star
    }
 }
 </script>
