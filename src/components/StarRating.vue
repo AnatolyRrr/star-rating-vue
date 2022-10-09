@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { readonly, ref } from 'vue';
+import { ref } from 'vue';
 
 const props = defineProps<{
    nameRating: string
@@ -36,7 +36,7 @@ const props = defineProps<{
    readonly: boolean
 }>()
 
-let activeStar = ref<number>(0)
+const activeStar = ref<number>(0)
 const isFocus = ref<boolean>(false)
 
 const hoverStar = (star: number) => {
@@ -52,11 +52,14 @@ const leaveHoverStar = () => {
 }
 
 const chooseRating = (star: number) => {
-   isFocus.value = true
-   if(props.readonly) {
-      activeStar = readonly<any>(star)
-   } else {
+   if(!props.readonly && !isFocus.value) {
+      isFocus.value = true
       activeStar.value = star
+   } else if(props.readonly && !isFocus.value) {
+      isFocus.value = true
+      activeStar.value = star
+   } else {
+      return
    }
 }
 </script>

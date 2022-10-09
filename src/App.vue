@@ -5,7 +5,7 @@
       :sizeStars= 50
       activeColor="#edaa10"
       inactiveColor="#e0bd6a"
-      :readonly="false"
+      :readonly="true"
    />
 </template>
 
