@@ -52,15 +52,11 @@ const leaveHoverStar = () => {
 }
 
 const chooseRating = (star: number) => {
-   if(
-      !props.readonly && !isFocus.value || 
-      props.readonly && !isFocus.value ||
-      !props.readonly && isFocus.value
-   ) {
+   if(props.readonly && isFocus.value) {
+      return
+   } else {
       isFocus.value = true
       activeStar.value = star
-   } else {
-      return
    }
 }
 </script>
