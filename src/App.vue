@@ -1,7 +1,7 @@
 <template>
    <StarRating 
-      name="Терминатор"
-      :total= 5
+      nameRating="Терминатор"
+      :totalStars= 5
       :sizeStars= 50
       activeColor="#edaa10"
       inactiveColor="#e0bd6a"

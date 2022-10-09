@@ -1,10 +1,10 @@
 <template>
    <div class="container">
-      <h1>{{name}} : {{activeStar}}</h1>
+      <h1>{{nameRating}} : {{activeStar}}</h1>
 
       <div class="stars">
          <svg
-            v-for="star in total"
+            v-for="star in totalStars"
             :key="star"
             :fill="star <= activeStar ? activeColor : inactiveColor"
             :height="sizeStars"
@@ -28,8 +28,8 @@
 import { readonly, ref } from 'vue';
 
 const props = defineProps<{
-   name: string
-   total: number
+   nameRating: string
+   totalStars: number
    sizeStars: number
    activeColor: string
    inactiveColor: string
