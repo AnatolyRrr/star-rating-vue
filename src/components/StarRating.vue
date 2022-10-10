@@ -27,14 +27,32 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const props = defineProps<{
-   nameRating: string
-   totalStars: number
-   sizeStars: number
-   activeColor: string
-   inactiveColor: string
-   readonly: boolean
-}>()
+const props = defineProps({
+   nameRating: {
+      type: String,
+      default: 'Имя рейтинга'
+   },
+   totalStars: {
+      type: Number,
+      default: 5
+   },
+   sizeStars: {
+      type: Number,
+      default: 50
+   },
+   activeColor: {
+      type: String,
+      default: '#edaa10'
+   },
+   inactiveColor: {
+      type: String,
+      default: '#e0bd6a'
+   },
+   readonly: {
+      type: Boolean,
+      default: false
+   }
+})
 
 const activeStar = ref<number>(0)
 const isFocus = ref<boolean>(false)

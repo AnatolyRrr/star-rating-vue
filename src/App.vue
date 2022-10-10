@@ -1,11 +1,11 @@
 <template>
    <StarRating 
       nameRating="Терминатор"
-      :totalStars= 5
-      :sizeStars= 50
-      activeColor="#edaa10"
-      inactiveColor="#e0bd6a"
-      :readonly="false"
+      :totalStars= 7
+      :sizeStars= 60
+      activeColor="red"
+      inactiveColor="pink"
+      :readonly="true"
    />
 </template>
 
