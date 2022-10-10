@@ -19,7 +19,7 @@
             :width="sizeStars"
             @mouseover="hoverStar(star)"
             @mouseleave="leaveHoverStar"
-            @click="chooseRating(star)"
+            @mousedown="chooseRating(star)"
          >
             <polygon
             strokeWidth="0"
@@ -35,10 +35,6 @@
 import { ref } from 'vue';
 
 const props = defineProps({
-   nameRating: {
-      type: String,
-      default: 'Имя рейтинга'
-   },
    totalStars: {
       type: Number,
       default: 5
@@ -62,16 +58,20 @@ const props = defineProps({
 })
 
 const activeStar = ref<number>(0)
+const selectedRating = ref<number>(0)
 const isFocus = ref<boolean>(false)
 
 const hoverStar = (star: number) => {
-   if(!isFocus.value) {
-      activeStar.value = star
+   if(props.readonly && isFocus.value) {
+      return
    }
+   activeStar.value = star
 }
 
 const leaveHoverStar = () => {
-   if(!isFocus.value) {
+   if(isFocus.value) {
+      activeStar.value = selectedRating.value
+   } else {
       activeStar.value = 0
    }
 }
@@ -79,10 +79,9 @@ const leaveHoverStar = () => {
 const chooseRating = (star: number) => {
    if(props.readonly && isFocus.value) {
       return
-   } else {
-      isFocus.value = true
-      activeStar.value = star
    }
+   isFocus.value = true
+   selectedRating.value = star
 }
 </script>
 
