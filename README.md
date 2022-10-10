@@ -8,6 +8,8 @@ This is a single component widget in which you can customize:
 - The size and number of stars;
 - Rating fixation.
 
+![alt text](figures/interface.PNG)
+
 ## Props
 
 - nameRating: the widget text;
