@@ -86,12 +86,8 @@ const chooseRating = (star: number) => {
 }
 </script>
 
-<style scoped lang="scss">
-.container {
-  padding: 20px;
-  margin: 20px;
-  box-shadow: 0px 0px 5px #000;
-  border-radius: 5px;
-  min-width: 500px;
+<style lang="scss" scoped>
+.star-rating__info {
+   display: flex;
 }
 </style>

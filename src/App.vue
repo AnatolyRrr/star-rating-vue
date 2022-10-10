@@ -15,3 +15,11 @@
 <script setup lang="ts">
 import StarRating from "./components/StarRating.vue";
 </script>
+
+<style lang="scss" scoped>
+.star-rating {
+   padding: 20px;
+   box-shadow: 0px 0px 5px #000;
+   border-radius: 5px;
+}
+</style>
