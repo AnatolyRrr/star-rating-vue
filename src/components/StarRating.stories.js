@@ -27,7 +27,7 @@ Default.args = {
 
 export const Readonly = Template.bind({});
 Readonly.args = {
-  readonly: false,
+  readonly: true,
 };
 
 export const Colors = Template.bind({});
