@@ -12,7 +12,7 @@ This is a single component widget in which you can customize:
 
 ## Props
 
-- nameRating: the widget text;
+- use the v-slot to add a title;
 - totalStars: total stats, defaults to 5;
 - sizeStars: stars size, defaults to 50;
 - activeColor: the color of the active star;
