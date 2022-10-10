@@ -1,6 +1,13 @@
 <template>
-   <div class="container">
-      <h1>{{nameRating}} : {{activeStar}}</h1>
+   <div class="star-rating">
+      <div class="star-rating__info">
+         
+         <slot>
+            <h1>Название рейтинга</h1>
+         </slot>
+
+         <h1 class="star-rating__total">: {{selectedRating}}</h1>
+      </div>
 
       <div class="stars">
          <svg
