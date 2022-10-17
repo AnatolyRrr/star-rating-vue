@@ -31,6 +31,12 @@ npm install
 npm run dev
 ```
 
+### Run Storybook for testing
+
+```sh
+npm run storybook
+```
+
 ### Type-Check, Compile and Minify for Production
 
 ```sh
